@@ -6,17 +6,20 @@ namespace kursProjekti
     {
         static void Main(string[] args)
         {
-            for (int broj = 1; broj < 100; broj++)
+            /* Kolatzova teorema
+             * 
+             */
+            Console.Write("Molimo Vas unesite neki broj: ");
+            int broj = int.Parse(Console.ReadLine());
+            while (broj != 1)
             {
-                if ((broj % 3 == 0) && (broj % 5 == 0))
-                    Console.WriteLine("fizzbuzz");
-                else if (broj % 3 == 0)
-                    Console.WriteLine("fizz");
-                else if (broj % 5 == 0)
-                    Console.WriteLine("buzz");
+                if (broj % 2 == 0)
+                    broj = broj / 2;
                 else
-                    Console.WriteLine(broj);
+                    broj = broj * 3 + 1;
+                Console.WriteLine(broj);
             }
+            Console.ReadKey();
             
         }
     }
